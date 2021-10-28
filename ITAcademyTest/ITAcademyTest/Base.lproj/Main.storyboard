@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ddv-NZ-OHP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q8R-j3-gWw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,9 +25,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kp8-im-jy7">
-                                <rect key="frame" x="150" y="108" width="114" height="44"/>
+                                <rect key="frame" x="119.5" y="108" width="175" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="My button">
+                                <state key="normal" title="increase by one">
                                     <color key="titleColor" red="1" green="0.10566476330000001" blue="0.10736459969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -44,9 +45,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98c-oo-76u">
-                                <rect key="frame" x="150" y="788" width="114" height="44"/>
+                                <rect key="frame" x="115" y="788" width="184" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="My button">
+                                <state key="normal" title="decrease by one">
                                     <color key="titleColor" red="1" green="0.10566476330000001" blue="0.10736459969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -76,6 +77,54 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="87.723214285714278"/>
         </scene>
+        <!--ConstraintDEMO View Controller-->
+        <scene sceneID="maB-T9-Wur">
+            <objects>
+                <viewController id="q8R-j3-gWw" customClass="ConstraintDEMOViewController" customModule="ITAcademyTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xFQ-Aj-XTP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1P3-2S-YXR">
+                                <rect key="frame" x="20" y="64" width="177" height="150"/>
+                                <color key="backgroundColor" name="backGroundColor1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="97E-gN-BXd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isj-qg-aTW">
+                                <rect key="frame" x="217" y="64" width="177" height="150"/>
+                                <color key="backgroundColor" name="backGroundColor2"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duv-FX-Px9">
+                                <rect key="frame" x="20" y="343" width="374" height="210"/>
+                                <color key="backgroundColor" red="1" green="0.25426248146162467" blue="0.37341098068809908" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="duv-FX-Px9" secondAttribute="height" multiplier="16:9" id="GIH-bo-MUM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zjz-TT-Mf4"/>
+                        <color key="backgroundColor" name="backGroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="isj-qg-aTW" firstAttribute="width" secondItem="1P3-2S-YXR" secondAttribute="width" id="5F1-FH-20e"/>
+                            <constraint firstItem="isj-qg-aTW" firstAttribute="top" secondItem="1P3-2S-YXR" secondAttribute="top" id="B5G-iC-gcC"/>
+                            <constraint firstItem="1P3-2S-YXR" firstAttribute="leading" secondItem="zjz-TT-Mf4" secondAttribute="leading" constant="20" id="Bfl-3M-Chl"/>
+                            <constraint firstItem="duv-FX-Px9" firstAttribute="leading" secondItem="zjz-TT-Mf4" secondAttribute="leading" constant="20" id="IUF-NT-UQu"/>
+                            <constraint firstItem="isj-qg-aTW" firstAttribute="height" secondItem="1P3-2S-YXR" secondAttribute="height" id="K2d-oD-NKv"/>
+                            <constraint firstItem="zjz-TT-Mf4" firstAttribute="trailing" secondItem="isj-qg-aTW" secondAttribute="trailing" constant="20" id="OWu-Em-Qty"/>
+                            <constraint firstItem="isj-qg-aTW" firstAttribute="leading" secondItem="1P3-2S-YXR" secondAttribute="trailing" constant="20" id="aGc-N7-DOJ"/>
+                            <constraint firstItem="duv-FX-Px9" firstAttribute="centerY" secondItem="xFQ-Aj-XTP" secondAttribute="centerY" id="ky6-mQ-COs"/>
+                            <constraint firstItem="zjz-TT-Mf4" firstAttribute="trailing" secondItem="duv-FX-Px9" secondAttribute="trailing" constant="20" id="pRS-7n-0K9"/>
+                            <constraint firstItem="1P3-2S-YXR" firstAttribute="top" secondItem="zjz-TT-Mf4" secondAttribute="top" constant="20" id="qBA-ta-cUd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vko-xe-XOH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2034.7826086956522" y="87.723214285714278"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="x6a-SX-GmN">
             <objects>
@@ -96,6 +145,15 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="backGroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backGroundColor1">
+            <color red="0.28044844261845125" green="1" blue="0.17007787221924642" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backGroundColor2">
+            <color red="1" green="1" blue="0.065350934863090515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
