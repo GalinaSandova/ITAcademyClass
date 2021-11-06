@@ -30,7 +30,7 @@ class CalculatorCodeViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .red
+        label.backgroundColor = .black
         return label
     }()
     
@@ -330,7 +330,7 @@ class CalculatorCodeViewController: UIViewController {
             self.resaltLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 50),
             self.resaltLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 50),
             self.resaltLabel.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -50),
-            self.resaltLabel.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)
+            self.resaltLabel.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.20)
         ])
         
         // Add Constraints for verticalStackView
