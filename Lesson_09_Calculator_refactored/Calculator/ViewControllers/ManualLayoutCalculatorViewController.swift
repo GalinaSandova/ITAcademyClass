@@ -95,6 +95,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
 //            manualDisplayLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
 //        ])
         let sumButton = BinaryOperatorButton(type: .custom)
+        sumButton.tag = BinaryOperand.sum.rawValue
         sumButton.addTarget(self, action: #selector(binaryOperandButtonTapped), for: .touchUpInside)
         sumButton.setTitle("+", for: .normal)
         sumButton.setTitleColor(sumButton.selectedColor, for: .normal)
@@ -114,6 +115,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
         ])
         
         let minusButton = BinaryOperatorButton(type: .custom)
+        minusButton.tag = BinaryOperand.substruct.rawValue
         minusButton.addTarget(self, action: #selector(binaryOperandButtonTapped), for: .touchUpInside)
         minusButton.setTitle("-", for: .normal)
         minusButton.setTitleColor(minusButton.selectedColor, for: .normal)
@@ -132,6 +134,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
             minusButton.heightAnchor.constraint(equalTo: equalButton.widthAnchor)
         ])
         let multiplyButton = BinaryOperatorButton(type: .custom)
+        multiplyButton.tag = BinaryOperand.multiply.rawValue
         multiplyButton.addTarget(self, action: #selector(binaryOperandButtonTapped), for: .touchUpInside)
         multiplyButton.setTitle("x", for: .normal)
         multiplyButton.setTitleColor(multiplyButton.selectedColor, for: .normal)
@@ -151,7 +154,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
         ])
         
         let divideButton = BinaryOperatorButton(type: .custom)
-        
+        divideButton.tag = BinaryOperand.divide.rawValue
         divideButton.addTarget(self, action: #selector(binaryOperandButtonTapped), for: .touchUpInside)
         divideButton.setTitle("÷", for: .normal)
         divideButton.setTitleColor(divideButton.selectedColor, for: .normal)
@@ -218,6 +221,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
         ])
         
         let percentButton = UneryOperatorButton(type: .custom)
+        percentButton.tag = UnaryOperand.percent.rawValue
         percentButton.addTarget(self, action: #selector(unaryOperatorButtonTapped), for: .touchUpInside)
         percentButton.setTitle("%", for: .normal)
         percentButton.setTitleColor(percentButton.selectedColor, for: .normal)
@@ -273,6 +277,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
         ])
         
         let plusMinusButton = UneryOperatorButton(type: .custom)
+        plusMinusButton.tag = UnaryOperand.invert.rawValue
         plusMinusButton.addTarget(self, action: #selector(unaryOperatorButtonTapped), for: .touchUpInside)
         plusMinusButton.setTitle("±", for: .normal)
         plusMinusButton.setTitleColor(plusMinusButton.selectedColor, for: .normal)

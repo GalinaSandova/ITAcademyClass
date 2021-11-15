@@ -9,8 +9,18 @@ import UIKit
 
 class AbstractCalculatorViewController: UIViewController {
     @IBOutlet weak var displayLabel: UILabel!
-    
     let calculatorLogic = CalculatorLogic()
+    
+    // MARK: - Select buttons
+    
+    private var lastSelectButton: UIButton?
+    private var selectButton: UIButton? {
+        didSet {
+            selectButton?.isSelected = true
+            lastSelectButton?.isSelected = false
+            lastSelectButton = selectButton
+        }
+    }
     
     // MARK: - override
     
@@ -31,7 +41,7 @@ class AbstractCalculatorViewController: UIViewController {
             print("unknown operand")
             return
         }
-        
+        selectButton = sender
         calculatorLogic.executeBinaryOperand(binaryOperand: binaryOperand)
     }
     
@@ -45,6 +55,7 @@ class AbstractCalculatorViewController: UIViewController {
     }
     
     @IBAction func equalOperatorButtonTapped(_ sender: Any) {
+        selectButton = nil
         calculatorLogic.executeEqualOperand()
     }
     
@@ -53,6 +64,7 @@ class AbstractCalculatorViewController: UIViewController {
     }
     
     @IBAction func clearButtonTapped(_ sender: Any) {
+        selectButton = nil
         calculatorLogic.executeClear()
     }
 }
