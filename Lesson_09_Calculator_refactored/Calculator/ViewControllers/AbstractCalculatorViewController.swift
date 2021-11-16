@@ -13,12 +13,14 @@ class AbstractCalculatorViewController: UIViewController {
     
     // MARK: - Select buttons
     
-    private var lastSelectButton: UIButton?
     private var selectButton: UIButton? {
+//        willSet {
+//            selectButton?.isSelected = false
+//            newValue?.isSelected = true
+//        }
         didSet {
             selectButton?.isSelected = true
-            lastSelectButton?.isSelected = false
-            lastSelectButton = selectButton
+            oldValue?.isSelected = false
         }
     }
     

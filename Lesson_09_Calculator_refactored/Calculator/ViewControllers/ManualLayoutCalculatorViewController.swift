@@ -225,7 +225,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
         percentButton.addTarget(self, action: #selector(unaryOperatorButtonTapped), for: .touchUpInside)
         percentButton.setTitle("%", for: .normal)
         percentButton.setTitleColor(percentButton.selectedColor, for: .normal)
-        percentButton.setTitleColor(percentButton.defaultColor, for: .selected)
+        percentButton.setTitleColor(percentButton.defaultColor, for: .highlighted)
         percentButton.backgroundColor = percentButton.defaultColor
         percentButton.titleLabel?.font = UIFont.systemFont(ofSize: 46, weight: .semibold)
         
@@ -281,7 +281,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
         plusMinusButton.addTarget(self, action: #selector(unaryOperatorButtonTapped), for: .touchUpInside)
         plusMinusButton.setTitle("±", for: .normal)
         plusMinusButton.setTitleColor(plusMinusButton.selectedColor, for: .normal)
-        plusMinusButton.setTitleColor(plusMinusButton.defaultColor, for: .selected)
+        plusMinusButton.setTitleColor(plusMinusButton.defaultColor, for: .highlighted)
         plusMinusButton.backgroundColor = plusMinusButton.defaultColor
         plusMinusButton.titleLabel?.font = UIFont.systemFont(ofSize: 46, weight: .semibold)
         
@@ -336,7 +336,7 @@ class ManualLayoutCalculatorViewController: AbstractCalculatorViewController {
         clearButton.addTarget(self, action: #selector(clearButtonTapped), for: .touchUpInside)
         clearButton.setTitle("AC", for: .normal)
         clearButton.setTitleColor(clearButton.selectedColor, for: .normal)
-        clearButton.setTitleColor(clearButton.defaultColor, for: .selected)
+        clearButton.setTitleColor(clearButton.defaultColor, for: .highlighted)
         clearButton.backgroundColor = clearButton.defaultColor
         clearButton.titleLabel?.font = UIFont.systemFont(ofSize: 46, weight: .semibold)
         

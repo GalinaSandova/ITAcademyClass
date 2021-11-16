@@ -11,10 +11,10 @@ class UneryOperatorButton: RoundedButton {
     let defaultColor = UIColor.systemGray
     let selectedColor = UIColor.white
     
-
-    override var isSelected: Bool {
+    override open var isHighlighted: Bool {
         didSet {
-            backgroundColor = isSelected ? selectedColor : defaultColor
+            backgroundColor = isHighlighted ? selectedColor : defaultColor
         }
     }
+
 }
