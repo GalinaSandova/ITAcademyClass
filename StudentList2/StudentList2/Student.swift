@@ -30,22 +30,22 @@ class Student {
 
 extension Student {
     static let all: [Student] = [
-        Student("Aртимович Игорь Владимирович", sex: .boy, yearOfBirth: 1980, avatar: nil),
-        Student("Богданович Дмитрий Александрович", sex: .boy, yearOfBirth: 1972, avatar: nil),
-        Student("Букаренко Арина Олеговна", sex: .girl, yearOfBirth: 1987, avatar: nil),
-        Student("Гришин Павел Андреевич", sex: .boy, yearOfBirth: 2004, avatar: nil),
-        Student("Ефименко Анастасия Владимировна", sex: .girl, yearOfBirth: 2012, avatar: nil),
-        Student("Куклицкий Максим Сергеевич", sex: .boy, yearOfBirth: 2021, avatar: nil),
-        Student("Лапин Николай Владимирович", sex: .boy, yearOfBirth: 2000, avatar: nil),
-        Student("Малишевский Никита Валерьевич", sex: .boy, yearOfBirth: 1745, avatar: nil),
-        Student("Матвеенко Сергей Александрови", sex: .boy, yearOfBirth: 2012, avatar: nil),
-        Student("Мостовой Алексей Алексеевич", sex: .boy, yearOfBirth: 1999, avatar: nil),
-        Student("Пачковский Михаил Тадеушевич", sex: .boy, yearOfBirth: 1998, avatar: nil),
-        Student("Пернацкая Алеся Юрьевна", sex: .girl, yearOfBirth: 1997, avatar: nil),
+        Student("Aртимович Игорь Владимирович", sex: .boy, yearOfBirth: 1980, avatar: "student_b"),
+        Student("Богданович Дмитрий Александрович", sex: .boy, yearOfBirth: 1972, avatar: "student_b-1"),
+        Student("Букаренко Арина Олеговна", sex: .girl, yearOfBirth: 1987, avatar: "student_g-4"),
+        Student("Гришин Павел Андреевич", sex: .boy, yearOfBirth: 2004, avatar: "student_b-2"),
+        Student("Ефименко Анастасия Владимировна", sex: .girl, yearOfBirth: 2012, avatar: "student_g-1"),
+        Student("Куклицкий Максим Сергеевич", sex: .boy, yearOfBirth: 2021, avatar: "student_b-3"),
+        Student("Лапин Николай Владимирович", sex: .boy, yearOfBirth: 2000, avatar: "student_b-4"),
+        Student("Малишевский Никита Валерьевич", sex: .boy, yearOfBirth: 1745, avatar: "error"),
+        Student("Матвеенко Сергей Александрови", sex: .boy, yearOfBirth: 2012, avatar: "student_b-5"),
+        Student("Мостовой Алексей Алексеевич", sex: .boy, yearOfBirth: 1999, avatar: "student_b-6"),
+        Student("Пачковский Михаил Тадеушевич", sex: .boy, yearOfBirth: 1998, avatar: "student_b-7"),
+        Student("Пернацкая Алеся Юрьевна", sex: .girl, yearOfBirth: 1997, avatar: "student_g-2"),
         Student("Савков Александр Геннадьевич", sex: .boy, yearOfBirth: 2003, avatar: nil),
-        Student("Сандова Галина Александровна", sex: .girl, yearOfBirth: 1956, avatar: nil),
+        Student("Сандова Галина Александровна", sex: .girl, yearOfBirth: 1956, avatar: "student_g-3"),
         Student("Симонов Владислав Дмитриевич", sex: .boy, yearOfBirth: 1996, avatar: nil),
         Student("Сысов Валерий Александрович", sex: .boy, yearOfBirth: 1999, avatar: nil),
-        Student("Елисеева Марина Михайловна", sex: .girl, yearOfBirth: 1999, avatar: nil),
-    ]
+        Student("Елисеева Марина Михайловна", sex: .girl, yearOfBirth: 1999, avatar: "student_g"),
+    ].sorted(by: {$0.name < $1.name})
 }

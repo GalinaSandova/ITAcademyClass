@@ -83,6 +83,7 @@ extension ViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell", for: indexPath) as! StudentTableViewCell
         cell.nameLabel.text = student.name
+        cell.studentImageView.image = UIImage(named: student.avatar ?? "user") ?? UIImage(named: "user")
         
         return cell
     }
@@ -111,16 +112,16 @@ extension SectionOfStudent {
         
         var sections: [SectionOfStudent]  = []
         
-        for strudent in sortStrudents {
+        for student in sortStrudents {
             if yearOfBirth == nil {
-                yearOfBirth = strudent.yearOfBirth
-                yearOfBirthStrudent = [strudent]
-            } else if yearOfBirth == strudent.yearOfBirth {
-                yearOfBirthStrudent.append(strudent)
-            } else if let yearlet = yearOfBirth, yearOfBirth != strudent.yearOfBirth {
+                yearOfBirth = student.yearOfBirth
+                yearOfBirthStrudent = [student]
+            } else if yearOfBirth == student.yearOfBirth {
+                yearOfBirthStrudent.append(student)
+            } else if let yearlet = yearOfBirth, yearOfBirth != student.yearOfBirth {
                 sections.append(SectionOfStudent("\(yearlet)", students: yearOfBirthStrudent))
-                yearOfBirth = strudent.yearOfBirth
-                yearOfBirthStrudent = [strudent]
+                yearOfBirth = student.yearOfBirth
+                yearOfBirthStrudent = [student]
             }
         }
         
@@ -133,26 +134,26 @@ extension SectionOfStudent {
     static func getStudentsByFirstLetter() -> [SectionOfStudent] {
         let sortStrudents = Student.all.sorted(by: { $0.name < $1.name})
         var firstLetter: String? = nil
-        var yearOfBirthStrudent:[Student] = []
+        var firstLeterStudent:[Student] = []
         
         var sections: [SectionOfStudent]  = []
         
-        for strudent in sortStrudents {
-            let first = "\(strudent.name.first ?? " ")"
+        for student in sortStrudents {
+            let first = "\(student.name.first ?? " ")"
             if firstLetter == nil {
                 firstLetter = first
-                yearOfBirthStrudent = [strudent]
+                firstLeterStudent = [student]
             } else if firstLetter == first {
-                yearOfBirthStrudent.append(strudent)
+                firstLeterStudent.append(student)
             } else if let firstLetterlet = firstLetter, firstLetter != first{
-                sections.append(SectionOfStudent("\(firstLetterlet)", students: yearOfBirthStrudent))
+                sections.append(SectionOfStudent("\(firstLetterlet)", students: firstLeterStudent))
                 firstLetter = first
-                yearOfBirthStrudent = [strudent]
+                firstLeterStudent = [student]
             }
         }
         
         if let firstLetterlet = firstLetter {
-            sections.append(SectionOfStudent("\(firstLetterlet)", students: yearOfBirthStrudent))
+            sections.append(SectionOfStudent("\(firstLetterlet)", students: firstLeterStudent))
         }
         return sections
     }
