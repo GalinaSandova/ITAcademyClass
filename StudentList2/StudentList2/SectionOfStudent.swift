@@ -8,10 +8,10 @@
 import Foundation
 
 class SectionOfStudent {
-    let nameOfSection:String
+    let nameOfSection:String?
     let students: [Student]
     
-    init (_ name:String, students:[Student]) {
+    init (_ name:String? = nil, students:[Student]) {
         nameOfSection = name
         self.students = students
     }

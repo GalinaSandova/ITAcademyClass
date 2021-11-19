@@ -15,7 +15,6 @@
 		8196DBCE2746E34C003F2563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8196DBCD2746E34C003F2563 /* Assets.xcassets */; };
 		8196DBD12746E34C003F2563 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8196DBCF2746E34C003F2563 /* LaunchScreen.storyboard */; };
 		8196DBD92746E49C003F2563 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196DBD82746E49C003F2563 /* StudentTableViewCell.swift */; };
-		8196DBDB2746EB57003F2563 /* RithTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196DBDA2746EB57003F2563 /* RithTableViewCell.swift */; };
 		8196DBDD2747A899003F2563 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196DBDC2747A899003F2563 /* Student.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		8196DBD02746E34C003F2563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8196DBD22746E34C003F2563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8196DBD82746E49C003F2563 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
-		8196DBDA2746EB57003F2563 /* RithTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RithTableViewCell.swift; sourceTree = "<group>"; };
 		8196DBDC2747A899003F2563 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +65,6 @@
 				8196DBC42746E34B003F2563 /* AppDelegate.swift */,
 				8196DBC62746E34B003F2563 /* SceneDelegate.swift */,
 				8196DBD82746E49C003F2563 /* StudentTableViewCell.swift */,
-				8196DBDA2746EB57003F2563 /* RithTableViewCell.swift */,
 				8196DBC82746E34B003F2563 /* ViewController.swift */,
 				8111FF382747B8AE00C604E0 /* SectionOfStudent.swift */,
 				8196DBDC2747A899003F2563 /* Student.swift */,
@@ -155,7 +152,6 @@
 				8196DBC52746E34B003F2563 /* AppDelegate.swift in Sources */,
 				8196DBC72746E34B003F2563 /* SceneDelegate.swift in Sources */,
 				8111FF392747B8AE00C604E0 /* SectionOfStudent.swift in Sources */,
-				8196DBDB2746EB57003F2563 /* RithTableViewCell.swift in Sources */,
 				8196DBD92746E49C003F2563 /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

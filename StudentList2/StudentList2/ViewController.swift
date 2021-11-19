@@ -11,14 +11,52 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var dataSource: [SectionOfStudent] = SectionOfStudent.getStudentsByFirstLetter()
+    var dataSource: [SectionOfStudent] = SectionOfStudent.getStudents() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Students"
         tableView.dataSource = self
     }
 
+    
+    @IBAction func groupAction(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Group", message: "Please Choose", preferredStyle: .actionSheet)
+        
+    
+        alert.addAction(UIAlertAction(title: "Sex",
+                                      style: .default,
+                                      handler: { _ in
+            self.dataSource = SectionOfStudent.getStudentsBySex()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "First letter",
+                                      style: .default,
+                                      handler: { _ in
+            self.dataSource = SectionOfStudent.getStudentsByFirstLetter()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "By Year Of Birth",
+                                      style: .default,
+                                      handler: { _ in
+            self.dataSource = SectionOfStudent.getStudentsByAge()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Ungrouping",
+                                      style: .destructive,
+                                      handler: { _ in
+            self.dataSource = SectionOfStudent.getStudents()
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -31,7 +69,6 @@ extension ViewController: UITableViewDataSource {
 //        let sectionOfStudent: SectionOfStudent = dataSource[section]
 //        let count = sectionOfStudent.students.count
 //        return count
-//
         return dataSource[section].students.count
     }
 
@@ -44,7 +81,6 @@ extension ViewController: UITableViewDataSource {
         let sectionOfStudent: SectionOfStudent = dataSource[indexPath.section]
         let student = sectionOfStudent.students[indexPath.row]
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell", for: indexPath) as! StudentTableViewCell
         cell.nameLabel.text = student.name
         
@@ -54,6 +90,12 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension SectionOfStudent {
+    
+    static func getStudents() -> [SectionOfStudent] {
+        return [SectionOfStudent(students: Student.all)]
+    }
+    
+            
     static func getStudentsBySex() -> [SectionOfStudent] {
         return [
             SectionOfStudent("List of boys students",
