@@ -99,9 +99,9 @@ extension SectionOfStudent {
             
     static func getStudentsBySex() -> [SectionOfStudent] {
         return [
-            SectionOfStudent("List of boys students",
+            SectionOfStudent("List of boys students - \(Student.all.filter({ $0.sex == .boy}).count) persons",
                              students: Student.all.filter({ $0.sex == .boy})),
-            SectionOfStudent("List of girls students",
+            SectionOfStudent("List of girls students - \(Student.all.filter({ $0.sex == .girl}).count) persons",
                              students: Student.all.filter({ girl in return girl.sex == .girl}))]
     }
     
