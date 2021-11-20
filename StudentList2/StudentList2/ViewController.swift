@@ -8,8 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var topTableConstaint: NSLayoutConstraint!
+    
+    var isSerchBarShow: Bool = false {
+        didSet {
+            searchBar.isHidden = !isSerchBarShow
+            topTableConstaint.constant = isSerchBarShow ? 44 : 0
+        }
+    }
     
     var dataSource: [SectionOfStudent] = SectionOfStudent.getStudents() {
         didSet {
@@ -22,8 +31,10 @@ class ViewController: UIViewController {
         
         title = "Students"
         tableView.dataSource = self
+        
+        isSerchBarShow = false
     }
-
+    
     
     @IBAction func groupAction(_ sender: Any) {
         let alert = UIAlertController(title: "Group", message: "Please Choose", preferredStyle: .actionSheet)
@@ -47,10 +58,14 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func actionSearch(_ sender: Any) {
+       isSerchBarShow = !isSerchBarShow
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
-  
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return dataSource.count
     }
@@ -58,7 +73,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource[section].students.count
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let nameOfSection = dataSource[section].nameOfSection else { return nil }
         return "\(nameOfSection) - \(dataSource[section].students.count) person(s)"

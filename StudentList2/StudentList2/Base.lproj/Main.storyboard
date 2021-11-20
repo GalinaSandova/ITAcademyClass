@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SuI-VN-6J7">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" id="0uk-fJ-nQo" customClass="StudentTableViewCell" customModule="StudentList2" customModuleProvider="target">
@@ -73,25 +73,39 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u1D-iC-Sk2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SuI-VN-6J7" secondAttribute="trailing" id="4xR-x5-MO7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SuI-VN-6J7" secondAttribute="bottom" id="I4c-Wa-c1s"/>
-                            <constraint firstItem="SuI-VN-6J7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K57-Uj-kW3"/>
+                            <constraint firstItem="SuI-VN-6J7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="K57-Uj-kW3"/>
                             <constraint firstItem="SuI-VN-6J7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uTa-tV-wHp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uEC-Xb-gvg">
-                        <barButtonItem key="rightBarButtonItem" title="Group" id="cBQ-pU-F3R">
-                            <connections>
-                                <action selector="groupAction:" destination="BYZ-38-t0r" id="QoT-r4-mRZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Group" id="cBQ-pU-F3R">
+                                <connections>
+                                    <action selector="groupAction:" destination="BYZ-38-t0r" id="QoT-r4-mRZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="w6F-Eb-wTd">
+                                <connections>
+                                    <action selector="actionSearch:" destination="BYZ-38-t0r" id="lvw-yu-h4S"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="u1D-iC-Sk2" id="rza-Mp-RcF"/>
                         <outlet property="tableView" destination="SuI-VN-6J7" id="8Cl-wu-Twb"/>
+                        <outlet property="topTableConstaint" destination="K57-Uj-kW3" id="8iR-Qo-vyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
