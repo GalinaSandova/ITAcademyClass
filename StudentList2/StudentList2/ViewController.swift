@@ -17,6 +17,30 @@ class ViewController: UIViewController {
         didSet {
             searchBar.isHidden = !isSerchBarShow
             topTableConstaint.constant = isSerchBarShow ? 44 : 0
+            if isSerchBarShow {
+                // show keyboard
+                searchBar.searchTextField.becomeFirstResponder()
+            } else {
+                // remove keyboard
+                self.view.endEditing(true)
+                //clean textfield
+                searchBar.searchTextField.text = ""
+                // return last gruping
+                setGrouping(wayOfGrouping)
+            }
+        }
+    }
+    
+    enum Grouping {
+        case sex
+        case firstLetter
+        case byYearOfBirth
+        case ungrouping
+    }
+    
+    var wayOfGrouping: Grouping = .ungrouping {
+        didSet {
+           setGrouping(wayOfGrouping)
         }
     }
     
@@ -33,6 +57,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         
         isSerchBarShow = false
+        searchBar.delegate = self
+        
     }
     
     
@@ -40,19 +66,19 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "Group", message: "Please Choose", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Sex", style: .default, handler: { _ in
-            self.dataSource = SectionOfStudent.getStudentsBySex()
+            self.wayOfGrouping = .sex
         }))
         
         alert.addAction(UIAlertAction(title: "First letter", style: .default, handler: { _ in
-            self.dataSource = SectionOfStudent.getStudentsByFirstLetter()
+            self.wayOfGrouping = .firstLetter
         }))
         
         alert.addAction(UIAlertAction(title: "By Year Of Birth", style: .default, handler: { _ in
-            self.dataSource = SectionOfStudent.getStudentsByAge()
+            self.wayOfGrouping = .byYearOfBirth
         }))
         
         alert.addAction(UIAlertAction(title: "Ungrouping", style: .destructive, handler: { _ in
-            self.dataSource = SectionOfStudent.getStudents()
+            self.wayOfGrouping = .ungrouping
         }))
         
         self.present(alert, animated: true, completion: nil)
@@ -62,6 +88,18 @@ class ViewController: UIViewController {
        isSerchBarShow = !isSerchBarShow
     }
     
+    func setGrouping(_ wayOfGrouping: Grouping) {
+        switch wayOfGrouping {
+        case .sex:
+            self.dataSource = SectionOfStudent.getStudentsBySex()
+        case .firstLetter:
+            self.dataSource = SectionOfStudent.getStudentsByFirstLetter()
+        case .byYearOfBirth:
+            self.dataSource = SectionOfStudent.getStudentsByAge()
+        case .ungrouping:
+            self.dataSource = SectionOfStudent.getStudents()
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -89,6 +127,17 @@ extension ViewController: UITableViewDataSource {
         cell.studentImageView.image = UIImage(named: student.avatar ?? "user") ?? UIImage(named: "user")
         
         return cell
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("\(searchText)")
+        let students = Student.all.filter { student in
+            return student.name.lowercased().contains(searchText.lowercased())
+        }
+        print("students = \(students)")
+        dataSource = [SectionOfStudent("Filter", students: students)]
     }
 }
 
