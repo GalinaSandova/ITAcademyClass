@@ -22,6 +22,11 @@ class StudentViewController: UIViewController {
         return table
     }()
     
+    private let searchBar: UISearchBar = {
+        let search = UISearchBar()
+        search.translatesAutoresizingMaskIntoConstraints = false
+        return search
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +36,27 @@ class StudentViewController: UIViewController {
         setupUI()
         
         tableView.dataSource = self
+        searchBar.delegate = self
     }
     
     private func setupUI() {
         self.view.addSubview(tableView)
+        self.view.addSubview(searchBar)
         
         NSLayoutConstraint.activate([
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.topAnchor.constraint(equalTo: view.topAnchor)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchBar.heightAnchor.constraint(equalToConstant: 40),
+        ])
+        
     }
 }
 
@@ -73,3 +88,5 @@ extension StudentViewController: UITableViewDataSource {
     }
 }
 
+extension StudentViewController: UISearchBarDelegate {
+}
