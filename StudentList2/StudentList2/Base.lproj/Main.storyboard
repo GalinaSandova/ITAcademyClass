@@ -121,26 +121,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAj-d8-bwj">
-                                <rect key="frame" x="72" y="425.5" width="270" height="45.5"/>
+                                <rect key="frame" x="33" y="425.5" width="348.5" height="45.5"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Welcome to our group">
+                                <buttonConfiguration key="configuration" style="plain" title="Welcome to our group (push)">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="26"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="welcomeButton:" destination="hdN-WV-eSm" eventType="touchUpInside" id="gr7-Ib-45e"/>
+                                    <action selector="pushButton:" destination="hdN-WV-eSm" eventType="touchUpInside" id="JqT-mO-TCa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlS-RW-032">
+                                <rect key="frame" x="18.5" y="511" width="377.5" height="45.5"/>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Welcome to our group (present)">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="26"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="presentButton:" destination="hdN-WV-eSm" eventType="touchUpInside" id="6al-MN-pqn"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N8e-Tt-HZR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JlS-RW-032" firstAttribute="top" secondItem="VAj-d8-bwj" secondAttribute="bottom" constant="40" id="8wk-wX-HRm"/>
                             <constraint firstItem="VAj-d8-bwj" firstAttribute="centerY" secondItem="TXI-Sk-4XJ" secondAttribute="centerY" id="aoX-MB-NfS"/>
                             <constraint firstItem="VAj-d8-bwj" firstAttribute="centerX" secondItem="TXI-Sk-4XJ" secondAttribute="centerX" id="mSy-QQ-HcS"/>
+                            <constraint firstItem="JlS-RW-032" firstAttribute="centerX" secondItem="TXI-Sk-4XJ" secondAttribute="centerX" id="mom-cc-wNU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5d6-Kn-dvB"/>
                     <connections>
-                        <outlet property="welcomeButton" destination="VAj-d8-bwj" id="2tV-AG-qYb"/>
+                        <outlet property="presentButton" destination="JlS-RW-032" id="8od-9u-JNS"/>
+                        <outlet property="pushButton" destination="VAj-d8-bwj" id="awS-Sp-Ven"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN4-AT-kex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -152,6 +167,12 @@
         <image name="user" width="1600" height="1200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
