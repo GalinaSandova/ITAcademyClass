@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gfW-Vv-bla"/>
+                        <segue destination="hdN-WV-eSm" kind="relationship" relationship="rootViewController" id="y3W-LC-YEc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4O-4k-yQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SuI-VN-6J7">
-                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" id="0uk-fJ-nQo" customClass="StudentTableViewCell" customModule="StudentList2" customModuleProvider="target">
@@ -110,7 +110,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2344.9275362318845" y="83.705357142857139"/>
+            <point key="canvasLocation" x="3326" y="84"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="0A3-PC-g2M">
+            <objects>
+                <viewController id="hdN-WV-eSm" customClass="StartViewController" customModule="StudentList2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TXI-Sk-4XJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAj-d8-bwj">
+                                <rect key="frame" x="72" y="425.5" width="270" height="45.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Welcome to our group">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="26"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="welcomeButton:" destination="hdN-WV-eSm" eventType="touchUpInside" id="gr7-Ib-45e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N8e-Tt-HZR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VAj-d8-bwj" firstAttribute="centerY" secondItem="TXI-Sk-4XJ" secondAttribute="centerY" id="aoX-MB-NfS"/>
+                            <constraint firstItem="VAj-d8-bwj" firstAttribute="centerX" secondItem="TXI-Sk-4XJ" secondAttribute="centerX" id="mSy-QQ-HcS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5d6-Kn-dvB"/>
+                    <connections>
+                        <outlet property="welcomeButton" destination="VAj-d8-bwj" id="2tV-AG-qYb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nN4-AT-kex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="84"/>
         </scene>
     </scenes>
     <resources>

@@ -9,7 +9,9 @@ import UIKit
 
 class StudentViewController: UIViewController {
     
-     var topTableConstaint: NSLayoutConstraint? // ???????? как привезать Constaint
+    var studentDelegate: StudentProtocol?
+    
+    var topTableConstaint: NSLayoutConstraint? // ???????? как привязать Constaint
     
     private var dataSource: [SectionOfStudent] = SectionOfStudent.getStudents() {
         didSet {
@@ -19,7 +21,7 @@ class StudentViewController: UIViewController {
     
     var wayOfGrouping: Grouping = .ungrouping {
         didSet {
-           setGrouping(wayOfGrouping)
+            setGrouping(wayOfGrouping)
         }
     }
     
@@ -79,6 +81,7 @@ class StudentViewController: UIViewController {
         setupUI()
         
         tableView.dataSource = self
+        tableView.delegate = self
         searchBar.delegate = self
         
         isSerchBarShow = false
@@ -187,5 +190,15 @@ extension StudentViewController: UISearchBarDelegate {
         }
         print("students = \(students)")
         dataSource = [SectionOfStudent("Filter", students: students)]
+    }
+}
+
+extension StudentViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let student = dataSource[indexPath.section].students[indexPath.row]
+        print("\(student.name)")
+        
+        self.studentDelegate?.selectStudent(viewContoller: self, name: student.name)
     }
 }

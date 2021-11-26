@@ -19,6 +19,8 @@
 		81A19D13274A40900091E2F6 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D12274A40900091E2F6 /* StudentViewController.swift */; };
 		81A19D17274BA6540091E2F6 /* CodeStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D16274BA6540091E2F6 /* CodeStudentTableViewCell.swift */; };
 		81A19D1C274CBD260091E2F6 /* Grouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D1B274CBD260091E2F6 /* Grouping.swift */; };
+		81A19D1E2750351F0091E2F6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D1D2750351F0091E2F6 /* StartViewController.swift */; };
+		81A19D212750BE180091E2F6 /* StudentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D202750BE180091E2F6 /* StudentProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		81A19D12274A40900091E2F6 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		81A19D16274BA6540091E2F6 /* CodeStudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeStudentTableViewCell.swift; sourceTree = "<group>"; };
 		81A19D1B274CBD260091E2F6 /* Grouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grouping.swift; sourceTree = "<group>"; };
+		81A19D1D2750351F0091E2F6 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		81A19D202750BE180091E2F6 /* StudentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		8196DBC32746E34B003F2563 /* StudentList2 */ = {
 			isa = PBXGroup;
 			children = (
+				81A19D1F2750BDEA0091E2F6 /* Protocols */,
 				81A19D1A274CBCE70091E2F6 /* Models */,
 				81A19D19274CBCBE0091E2F6 /* TableViewCells */,
 				81A19D18274CBCA40091E2F6 /* ViewControllers */,
@@ -86,6 +91,7 @@
 			children = (
 				8196DBC82746E34B003F2563 /* ViewController.swift */,
 				81A19D12274A40900091E2F6 /* StudentViewController.swift */,
+				81A19D1D2750351F0091E2F6 /* StartViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,6 +113,14 @@
 				81A19D1B274CBD260091E2F6 /* Grouping.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		81A19D1F2750BDEA0091E2F6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				81A19D202750BE180091E2F6 /* StudentProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,10 +195,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8196DBC92746E34B003F2563 /* ViewController.swift in Sources */,
+				81A19D212750BE180091E2F6 /* StudentProtocol.swift in Sources */,
 				8196DBDD2747A899003F2563 /* Student.swift in Sources */,
 				8196DBC52746E34B003F2563 /* AppDelegate.swift in Sources */,
 				8196DBC72746E34B003F2563 /* SceneDelegate.swift in Sources */,
 				8111FF392747B8AE00C604E0 /* SectionOfStudent.swift in Sources */,
+				81A19D1E2750351F0091E2F6 /* StartViewController.swift in Sources */,
 				81A19D1C274CBD260091E2F6 /* Grouping.swift in Sources */,
 				81A19D13274A40900091E2F6 /* StudentViewController.swift in Sources */,
 				81A19D17274BA6540091E2F6 /* CodeStudentTableViewCell.swift in Sources */,
