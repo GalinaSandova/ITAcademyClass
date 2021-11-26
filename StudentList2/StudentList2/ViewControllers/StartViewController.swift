@@ -19,6 +19,7 @@ class StartViewController: UIViewController {
 
     @IBAction func pushButton(_ sender: Any) {
         let vc = StudentViewController()
+        // let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         vc.studentDelegate = self //pushButton
         self.buttonTapped = .push
         self.navigationController?.pushViewController(vc, animated: true)

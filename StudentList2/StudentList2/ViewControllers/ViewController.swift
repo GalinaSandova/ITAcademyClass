@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var studentDelegate: StudentProtocol?
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var topTableConstaint: NSLayoutConstraint!
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
         
         title = "Students"
         tableView.dataSource = self
-        
+        tableView.delegate = self
         isSerchBarShow = false
         searchBar.delegate = self
         
@@ -120,6 +122,7 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
+    
 }
 
 extension ViewController: UISearchBarDelegate {
@@ -130,5 +133,12 @@ extension ViewController: UISearchBarDelegate {
         }
         print("students = \(students)")
         dataSource = [SectionOfStudent("Filter", students: students)]
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let student = dataSource[indexPath.section].students[indexPath.row]
+        self.studentDelegate?.selectStudent(viewContoller: self, name: student.name)
     }
 }
