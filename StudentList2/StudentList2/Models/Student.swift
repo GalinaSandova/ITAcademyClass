@@ -28,6 +28,15 @@ class Student {
     }
 }
 
+//extension Student: Equatable {
+//    static func == (lhs: Student, rhs: Student) -> Bool {
+//        return lhs.name == rhs.name
+//        && lhs.yearOfBirth == rhs.yearOfBirth
+//        && lhs.avatar == rhs.avatar
+//        && lhs.sex == rhs.sex
+//    }
+//}
+
 extension Student {
     static let all: [Student] = [
         Student("Aртимович Игорь Владимирович", sex: .boy, yearOfBirth: 1980, avatar: "student_b"),
@@ -47,5 +56,6 @@ extension Student {
         Student("Симонов Владислав Дмитриевич", sex: .boy, yearOfBirth: 1996, avatar: "student_b-3"),
         Student("Сысов Валерий Александрович", sex: .boy, yearOfBirth: 1999, avatar: nil),
         Student("Елисеева Марина Михайловна", sex: .girl, yearOfBirth: 1999, avatar: "student_g"),
+        Student("Сандова Галина Александровна", sex: .girl, yearOfBirth: 1996, avatar: "student_gff"),
     ].sorted(by: {$0.name < $1.name})
 }

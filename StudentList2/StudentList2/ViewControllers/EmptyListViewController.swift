@@ -8,8 +8,8 @@
 import UIKit
 
 class EmptyListViewController: UIViewController  {
-  
-
+    
+    
     private var dataSource: [Student] = []
     
     private let addStudentButton: UIButton = {
@@ -47,7 +47,7 @@ class EmptyListViewController: UIViewController  {
         let vc = StudentViewController()
         
         vc.studentDelegate = self //pushButton
-
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -73,7 +73,7 @@ class EmptyListViewController: UIViewController  {
     }
 }
 
-    
+
 
 extension EmptyListViewController: UITableViewDataSource {
     
@@ -95,9 +95,26 @@ extension EmptyListViewController: UITableViewDataSource {
 extension EmptyListViewController: StudentProtocol {
     func selectStudent(viewContoller: UIViewController, student: Student) {
         print("selectStudent student: \(student)")
-        dataSource.append(student)
-        tableView.reloadData()
-        self.navigationController?.popViewController(animated: true)
+        
+        //let isStudent2 = dataSource.contains(where: {$0.name == student.name})
+        let isStudent = dataSource.contains(where: { item in
+            student.sex == item.sex
+            && student.yearOfBirth == item.yearOfBirth
+            && student.name == item.name
+            && student.avatar == item.avatar
+        })
+        
+        if isStudent == false {
+            dataSource.append(student)
+            tableView.reloadData()
+            self.navigationController?.popViewController(animated: true)
+            
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Student is in the list", preferredStyle: .alert)
+            let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancelAlertAction)
+            viewContoller.present(alert, animated: true, completion: nil)
+        }
     }
     
     func selectStudent(viewContoller: UIViewController, name: String) {
