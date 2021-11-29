@@ -42,6 +42,10 @@ class StartViewController: UIViewController {
 }
 
 extension StartViewController: StudentProtocol {
+    func selectStudent(viewContoller: UIViewController, student: Student) {
+        // ничего не делать
+    }
+    
     
     func selectStudent(viewContoller: UIViewController, name: String) {
         print("StartViewController \(name)")
@@ -56,8 +60,8 @@ extension StartViewController: StudentProtocol {
     
 }
 
-extension UIButton: StudentProtocol {
-    func selectStudent(viewContoller: UIViewController, name: String) {
-        self.setTitle(name, for: .normal)
-    }
-}
+//extension UIButton: StudentProtocol {
+//    func selectStudent(viewContoller: UIViewController, name: String) {
+//        self.setTitle(name, for: .normal)
+//    }
+//}

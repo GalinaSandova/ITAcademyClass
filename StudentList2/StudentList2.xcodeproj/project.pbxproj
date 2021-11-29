@@ -21,6 +21,7 @@
 		81A19D1C274CBD260091E2F6 /* Grouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D1B274CBD260091E2F6 /* Grouping.swift */; };
 		81A19D1E2750351F0091E2F6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D1D2750351F0091E2F6 /* StartViewController.swift */; };
 		81A19D212750BE180091E2F6 /* StudentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D202750BE180091E2F6 /* StudentProtocol.swift */; };
+		81CCC4DE27540A0400D978D3 /* EmptyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCC4DD27540A0400D978D3 /* EmptyListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		81A19D1B274CBD260091E2F6 /* Grouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grouping.swift; sourceTree = "<group>"; };
 		81A19D1D2750351F0091E2F6 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		81A19D202750BE180091E2F6 /* StudentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProtocol.swift; sourceTree = "<group>"; };
+		81CCC4DD27540A0400D978D3 /* EmptyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		81A19D18274CBCA40091E2F6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				81CCC4DD27540A0400D978D3 /* EmptyListViewController.swift */,
 				8196DBC82746E34B003F2563 /* ViewController.swift */,
 				81A19D12274A40900091E2F6 /* StudentViewController.swift */,
 				81A19D1D2750351F0091E2F6 /* StartViewController.swift */,
@@ -196,6 +199,7 @@
 			files = (
 				8196DBC92746E34B003F2563 /* ViewController.swift in Sources */,
 				81A19D212750BE180091E2F6 /* StudentProtocol.swift in Sources */,
+				81CCC4DE27540A0400D978D3 /* EmptyListViewController.swift in Sources */,
 				8196DBDD2747A899003F2563 /* Student.swift in Sources */,
 				8196DBC52746E34B003F2563 /* AppDelegate.swift in Sources */,
 				8196DBC72746E34B003F2563 /* SceneDelegate.swift in Sources */,

@@ -10,4 +10,5 @@ import UIKit
 
 protocol StudentProtocol {
     func selectStudent(viewContoller: UIViewController, name: String)
+    func selectStudent(viewContoller: UIViewController, student: Student)
 }

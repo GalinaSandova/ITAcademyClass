@@ -200,6 +200,7 @@ extension StudentViewController: UITableViewDelegate {
         print("\(student.name)")
         
         self.studentDelegate?.selectStudent(viewContoller: self, name: student.name)
+        self.studentDelegate?.selectStudent(viewContoller: self, student: student)
         
         // Если реализовывать delegate через кнопку.
         //self.navigationController?.popViewController(animated: true)
