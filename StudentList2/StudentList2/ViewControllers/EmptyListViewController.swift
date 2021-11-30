@@ -35,6 +35,7 @@ class EmptyListViewController: UIViewController  {
         super.viewDidLoad()
         self.title = "Selected students"
         tableView.dataSource = self
+        self.tableView.delegate = self
         self.view.backgroundColor = .systemBackground
         setupUI()
         addStudentButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
@@ -74,7 +75,6 @@ class EmptyListViewController: UIViewController  {
 }
 
 
-
 extension EmptyListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,6 +92,29 @@ extension EmptyListViewController: UITableViewDataSource {
         return cell
     }
 }
+extension EmptyListViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView,
+                       trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        // Trash action
+        let trash = UIContextualAction(style: .destructive,
+                                       title: "Trash") { [weak self] (action, view, completionHandler) in
+                                        //self?.handleMoveToTrash()
+            self?.dataSource.remove(at: indexPath.row)
+            tableView.reloadSections(.init(integer: 0), with: .none)
+            //tableView.reloadData()
+                                        completionHandler(true)
+        }
+        trash.backgroundColor = .systemRed
+
+
+        let configuration = UISwipeActionsConfiguration(actions: [trash])
+
+        return configuration
+    }
+}
+
 extension EmptyListViewController: StudentProtocol {
     func selectStudent(viewContoller: UIViewController, student: Student) {
         print("selectStudent student: \(student)")
