@@ -30,13 +30,16 @@ class EmptyListViewController: UIViewController  {
         return table
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Selected students"
         tableView.dataSource = self
-        self.tableView.delegate = self
+        tableView.delegate = self
+        tableView.dragDelegate = self
+        tableView.dragInteractionEnabled = true
+        
         self.view.backgroundColor = .systemBackground
+        
         setupUI()
         addStudentButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
@@ -108,10 +111,16 @@ extension EmptyListViewController: UITableViewDelegate {
         }
         trash.backgroundColor = .systemRed
 
-
         let configuration = UISwipeActionsConfiguration(actions: [trash])
 
         return configuration
+    }
+    
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // Update the model
+        let mover = dataSource.remove(at: sourceIndexPath.row)
+        dataSource.insert(mover, at: destinationIndexPath.row)
     }
 }
 
@@ -143,4 +152,14 @@ extension EmptyListViewController: StudentProtocol {
     func selectStudent(viewContoller: UIViewController, name: String) {
         print("selectStudent name: \(name)")
     }
+}
+
+extension EmptyListViewController: UITableViewDragDelegate {
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let dragItem = UIDragItem(itemProvider: NSItemProvider())
+         dragItem.localObject = dataSource[indexPath.row]
+         return [ dragItem ]
+    }
+    
+    
 }
