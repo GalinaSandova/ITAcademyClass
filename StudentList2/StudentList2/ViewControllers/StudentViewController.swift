@@ -9,7 +9,8 @@ import UIKit
 
 class StudentViewController: UIViewController {
     
-    var studentDelegate: StudentProtocol?
+   // var studentDelegate: StudentProtocol?
+    var selectStudent: ((_ student: Student, _ sender: UIViewController) -> Void)?
     
     var topTableConstaint: NSLayoutConstraint? // ???????? как привязать Constaint
     
@@ -198,9 +199,10 @@ extension StudentViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let student = dataSource[indexPath.section].students[indexPath.row]
         print("\(student.name)")
+        self.selectStudent?(student, self)
         
-        self.studentDelegate?.selectStudent(viewContoller: self, name: student.name)
-        self.studentDelegate?.selectStudent(viewContoller: self, student: student)
+//        self.studentDelegate?.selectStudent(viewContoller: self, name: student.name)
+//        self.studentDelegate?.selectStudent(viewContoller: self, student: student)
         
         // Если реализовывать delegate через кнопку.
         //self.navigationController?.popViewController(animated: true)

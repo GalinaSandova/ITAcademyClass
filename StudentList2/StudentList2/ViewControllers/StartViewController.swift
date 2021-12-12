@@ -13,21 +13,21 @@ class StartViewController: UIViewController {
         case present
     }
     var buttonTapped: ButtonTapped? = nil
-    
+
     @IBOutlet weak var pushButton: UIButton!
     @IBOutlet weak var presentButton: UIButton!
 
     @IBAction func pushButton(_ sender: Any) {
         let vc = StudentViewController()
         // let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        vc.studentDelegate = self //pushButton
+      //  vc.studentDelegate = self //pushButton
         self.buttonTapped = .push
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func presentButton(_ sender: Any) {
         let vc = StudentViewController()
-        vc.studentDelegate = self
+       // vc.studentDelegate = self
         self.buttonTapped = .present
         let nc = UINavigationController(rootViewController: vc)
         self.present(nc, animated: true, completion: nil)

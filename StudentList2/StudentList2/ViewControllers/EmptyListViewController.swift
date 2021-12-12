@@ -11,6 +11,7 @@ class EmptyListViewController: UIViewController  {
     
     
     private var dataSource: [Student] = []
+  
     
     private let addStudentButton: UIButton = {
         var button = UIButton()
@@ -49,8 +50,11 @@ class EmptyListViewController: UIViewController  {
     
     @objc func buttonAction(sender: UIButton!) {
         let vc = StudentViewController()
+        vc.selectStudent = { [weak self] student, vc in
+            self?.selectStudent(viewContoller: vc, student: student)
+        }
         
-        vc.studentDelegate = self //pushButton
+        // vc.studentDelegate = self //pushButton
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -103,7 +107,7 @@ extension EmptyListViewController: UITableViewDelegate {
         // Trash action
         let trash = UIContextualAction(style: .destructive,
                                        title: "Trash") { [weak self] (action, view, completionHandler) in
-                                        //self?.handleMoveToTrash()
+                //self?.handleMoveToTrash()
             self?.dataSource.remove(at: indexPath.row)
             tableView.reloadSections(.init(integer: 0), with: .none)
             //tableView.reloadData()
