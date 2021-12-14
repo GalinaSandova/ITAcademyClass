@@ -201,6 +201,7 @@ extension StudentViewController: UITableViewDelegate {
         print("\(student.name)")
         self.selectStudent?(student, self)
         
+        
 //        self.studentDelegate?.selectStudent(viewContoller: self, name: student.name)
 //        self.studentDelegate?.selectStudent(viewContoller: self, student: student)
         

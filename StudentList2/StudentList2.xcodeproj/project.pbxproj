@@ -21,6 +21,7 @@
 		81A19D1C274CBD260091E2F6 /* Grouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D1B274CBD260091E2F6 /* Grouping.swift */; };
 		81A19D1E2750351F0091E2F6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D1D2750351F0091E2F6 /* StartViewController.swift */; };
 		81A19D212750BE180091E2F6 /* StudentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D202750BE180091E2F6 /* StudentProtocol.swift */; };
+		81A21CCE27667B6200303FFA /* WADefaulst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A21CCD27667B6200303FFA /* WADefaulst.swift */; };
 		81CCC4DE27540A0400D978D3 /* EmptyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCC4DD27540A0400D978D3 /* EmptyListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		81A19D1B274CBD260091E2F6 /* Grouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grouping.swift; sourceTree = "<group>"; };
 		81A19D1D2750351F0091E2F6 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		81A19D202750BE180091E2F6 /* StudentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProtocol.swift; sourceTree = "<group>"; };
+		81A21CCD27667B6200303FFA /* WADefaulst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WADefaulst.swift; sourceTree = "<group>"; };
 		81CCC4DD27540A0400D978D3 /* EmptyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 		8196DBC32746E34B003F2563 /* StudentList2 */ = {
 			isa = PBXGroup;
 			children = (
+				81A21CC927667A8F00303FFA /* commons */,
 				81A19D1F2750BDEA0091E2F6 /* Protocols */,
 				81A19D1A274CBCE70091E2F6 /* Models */,
 				81A19D19274CBCBE0091E2F6 /* TableViewCells */,
@@ -124,6 +127,22 @@
 				81A19D202750BE180091E2F6 /* StudentProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		81A21CC927667A8F00303FFA /* commons */ = {
+			isa = PBXGroup;
+			children = (
+				81A21CCA27667AC500303FFA /* dataSaving */,
+			);
+			path = commons;
+			sourceTree = "<group>";
+		};
+		81A21CCA27667AC500303FFA /* dataSaving */ = {
+			isa = PBXGroup;
+			children = (
+				81A21CCD27667B6200303FFA /* WADefaulst.swift */,
+			);
+			path = dataSaving;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +227,7 @@
 				81A19D1C274CBD260091E2F6 /* Grouping.swift in Sources */,
 				81A19D13274A40900091E2F6 /* StudentViewController.swift in Sources */,
 				81A19D17274BA6540091E2F6 /* CodeStudentTableViewCell.swift in Sources */,
+				81A21CCE27667B6200303FFA /* WADefaulst.swift in Sources */,
 				8196DBD92746E49C003F2563 /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

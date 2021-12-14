@@ -8,9 +8,9 @@
 import Foundation
 
 
-class Student {
+class Student: Codable {
     
-    enum Sex {
+    enum Sex: Codable {
         case girl
         case boy
     }
@@ -36,6 +36,8 @@ class Student {
 //        && lhs.sex == rhs.sex
 //    }
 //}
+
+
 
 extension Student {
     static let all: [Student] = [

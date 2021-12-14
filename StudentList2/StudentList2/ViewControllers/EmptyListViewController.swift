@@ -44,6 +44,7 @@ class EmptyListViewController: UIViewController  {
         setupUI()
         addStudentButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
+        dataSource = WADefaults.sh.students
         
         // Do any additional setup after loading the view.
     }
@@ -109,6 +110,7 @@ extension EmptyListViewController: UITableViewDelegate {
                                        title: "Trash") { [weak self] (action, view, completionHandler) in
                 //self?.handleMoveToTrash()
             self?.dataSource.remove(at: indexPath.row)
+            WADefaults.sh.students = self?.dataSource ?? []
             tableView.reloadSections(.init(integer: 0), with: .none)
             //tableView.reloadData()
                                         completionHandler(true)
@@ -125,6 +127,7 @@ extension EmptyListViewController: UITableViewDelegate {
         // Update the model
         let mover = dataSource.remove(at: sourceIndexPath.row)
         dataSource.insert(mover, at: destinationIndexPath.row)
+        WADefaults.sh.students = self.dataSource 
     }
 }
 
@@ -142,6 +145,8 @@ extension EmptyListViewController: StudentProtocol {
         
         if isStudent == false {
             dataSource.append(student)
+            WADefaults.sh.students = dataSource
+            
             tableView.reloadData()
             self.navigationController?.popViewController(animated: true)
             
